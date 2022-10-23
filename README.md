@@ -17,7 +17,9 @@ neg([]).
 
 This code can be given to DeepLog under Linux as follows.
 
+```
 $ dl par3
+```
 
 This produce the following output.
 
