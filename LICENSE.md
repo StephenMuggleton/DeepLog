@@ -1,6 +1,6 @@
 BSD 3-Clause License
 
-Copyright (c) 2022, Stephen Muggleton
+Copyright (c) 2022, The authors of DeepLog
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
