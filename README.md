@@ -30,3 +30,19 @@ par3_1(X,Y) :- parent(X,Z), parent(Z,Y).
 ```
 
 In this program the predicate symbol par3_1 is invented (i.e. does not appear in the background knowledge nor in the examples).
+
+The code and data used in the following paper 
+
+```
+	S.H. Muggleton, "Hypothesising an Algorithm from One Example:
+		the Role of Specificity", Philosophical Transactions
+		of the Royal Society A, 2023.
+```
+
+can be downloaded in the following zipfile.
+
+```
+DeepLogCodeAndExamples.zip
+```
+
+
