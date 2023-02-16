@@ -1,4 +1,10 @@
-DeepLog is an inductive logic programming (ILP) system based on meta-interpretive learning. If you use DeepLog for research, please use this citation and cite the relevant paper.
+DeepLog is an inductive logic programming (ILP) system based on meta-interpretive learning. If you use DeepLog for research, please use this citation and cite the following paper.
+
+```
+	S.H. Muggleton, "Hypothesising an Algorithm from One Example:
+		the Role of Specificity", Philosophical Transactions
+		of the Royal Society A, 2023.
+```
 
 Using DeepLog
 DeepLog is written in Prolog and runs with SWI-Prolog. It uses a standard library of Prolog background knowledge (lib_dl) together
