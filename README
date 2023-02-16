@@ -1,0 +1,84 @@
+CODE AND DATA ASSOCIATED WITH THE PAPER:
+
+	S.H. Muggleton, "Hypothesising an Algorithm from One Example:
+		the Role of Specificity", Philosophical Transactions
+		of the Royal Society A, 2023.
+
+RUNNING EXAMPLES
+To run the code you need to install SWI-Prolog under Linux. The following
+Linux command will then run DeepLog on the example set abcs04.pl.
+
+	$ dl abcs04
+
+This should produce the following output.
+
+======================
+% HYPOTHESISED PROGRAM (7 clauses)
+
+% g(abcs04) = 0.000925925925925926 [1r1080]
+% -ln p(abcs04|E) = 24.96-6.98 = 17.97
+% EA(1,abcs04) >= 99.57
+
+abcs04(X,Y) :- a(X,Z), abcs04_1(Z,Y).
+
+abcs04_1(X,Y) :- b(X,Z), abcs04_1_1(Z,Y).
+
+abcs04_1_1(X,Y) :- g(X,Z), h(Z,Y).
+abcs04_1_1(X,Y) :- cdef(X,Z), abcs04_1_1(Z,Y).
+
+% AUXILIARY DEFINITIONS [3]
+
+cdef(X,Y) :- cd(X,Z), ef(Z,Y).
+cd(X,Y) :- c(X,Z), d(Z,Y).
+ef(X,Y) :- e(X,Z), f(Z,Y).
+======================
+
+In order to evaluate the accuracy of the A hypothesis above
+on a test set use the following.
+
+	$ dt abcs04
+
+This will produce the following output.
+
+======================
+Contingency table=    ________P________~P
+                    A|        1|        0|         1
+                   ~A|        0|        17|         17
+                      ~~~~~~~~~~~~~~~~~~~
+                              1         17         18
+Overall accuracy= 100%
+Testing time taken: 7.400600000001534e-5 seconds
+======================
+
+EXAMPLE SETS - EXAMPLES IN THE PAPER MARKED WITH "***"
+	abcs04.pl	***	Target grammar is ab(cdef)*gh
+	abcs08.pl
+	anc.pl
+	chessB.pl
+	des.pl
+	fire16.pl	***	Target program for getting out of building
+	len.pl
+	member.pl
+	par3.pl
+	revupc.pl	***	Reverse and Uppercase a word, eg alice -> ECILA
+BACKGROUND KNOWLEDGE
+	chessbk.pl
+	familybk.pl
+	firebk.pl
+	primitives1.pl
+	primitives.pl
+LINUX SCRIPTS
+	clr
+	dl		* Run DeepLog
+	dlt		* Run Deeplog and Test hypothesis
+	dt
+DEEPLOG CODE
+	compile.pl	*** Meta-Compilation
+	interpret.pl	*** Meta-interpretation
+	learned.pl
+	lib_dl.pl	* Library of primitives
+	lmarith.pl	* Logical matrix arithmetic
+	modes.pl
+	setarith.pl
+	test.pl		* Code for testing hypothesis
+	utils.pl
